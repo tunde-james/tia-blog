@@ -1,3 +1,22 @@
 .container {
-  background-color: brown;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-block-end: 50px;
+}
+
+.images {
+  object-fit: cover;
+}
+
+.content {
+}
+
+.title {
+  margin-block-end: 10px;
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: hsl(0 0% 60%);
 }
