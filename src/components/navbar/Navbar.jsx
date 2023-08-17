@@ -15,7 +15,7 @@ const links = [
 
 function Navbar() {
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <Link href="/" className={styles.logo}>
         fortitude
       </Link>
@@ -32,7 +32,7 @@ function Navbar() {
           Logout
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
 

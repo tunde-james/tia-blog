@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div>©2023 Fortitude. All rights reserved</div>
       <div className={styles.social}>
         <Image
@@ -36,7 +36,7 @@ function Footer() {
           alt="Tia Dev YouTube"
         />
       </div>
-    </div>
+    </footer>
   );
 }
 

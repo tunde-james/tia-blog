@@ -32,13 +32,3 @@
   font-size: 1.5rem;
   font-weight: 300;
 }
-
-.worksBtn {
-  padding: 20px;
-  cursor: pointer;
-  background-color: hsl(150 48% 54%);
-  border: none;
-  border-radius: 5px;
-  width: max-content;
-  color: hsl(0, 0%, 96%)
-}
