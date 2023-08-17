@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
+import DarkModeToggle from '../darkmodetoggle/DarkModeToggle';
 import styles from './navbar.module.css';
 
 const links = [
@@ -20,6 +21,7 @@ function Navbar() {
         fortitude
       </Link>
       <div className={styles.links}>
+        <DarkModeToggle />
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}

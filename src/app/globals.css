@@ -17,6 +17,20 @@ a {
   color: inherit;
 }
 
+.theme {
+  transition: 1s all ease;
+}
+
+.light {
+  background-color: hsl(0 0% 100%);
+  color: hsl(0 0% 7%);
+}
+
+.dark {
+  background-color: hsl(0 0% 7%);
+  color: hsl(0 0% 100%);
+}
+
 .container {
   width: min(100% - 2rem, 70rem);
   min-height: 100vh;
