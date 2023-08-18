@@ -3,6 +3,11 @@ import Image from 'next/image';
 import Button from '@/components/button/Button';
 import styles from './page.module.css';
 
+export const metadata = {
+  title: 'Tia Blog | Contact',
+  description: 'Contact Us',
+};
+
 function Contact() {
   return (
     <div className={styles.container}>
