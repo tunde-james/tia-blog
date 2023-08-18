@@ -2,58 +2,37 @@ import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/button/Button';
 import styles from './category.module.css';
+import { items } from './data.js';
+import { notFound } from 'next/navigation';
+
+function getData(cat) {
+  const data = items[cat];
+
+  if (!data) {
+    return notFound();
+  }
+
+  return data; 
+}
 
 function Category({ params }) {
-  console.log(params);
+  const data = getData(params.Category);
 
   return (
     <div className={styles.container}>
       <h1 className={styles.catTitle}>{params.category}</h1>
-      <section className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>Test</h1>
-          <p className={styles.desc}>Desc</p>
-          <Button url="#">See More</Button>
-        </div>
-        <div className={styles.imgContainer}>
-          <Image
-            fill={true}
-            src="https://images.pexels.com/photos/887822/pexels-photo-887822.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt=""
-            className={styles.img}
-          />
-        </div>
-      </section>
-      <section className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>Test</h1>
-          <p className={styles.desc}>Desc</p>
-          <Button url="#">See More</Button>
-        </div>
-        <div className={styles.imgContainer}>
-          <Image
-            fill={true}
-            src="https://images.pexels.com/photos/887822/pexels-photo-887822.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt=""
-            className={styles.img}
-          />
-        </div>
-      </section>
-      <section className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>Test</h1>
-          <p className={styles.desc}>Desc</p>
-          <Button url="#">See More</Button>
-        </div>
-        <div className={styles.imgContainer}>
-          <Image
-            fill={true}
-            src="https://images.pexels.com/photos/887822/pexels-photo-887822.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt=""
-            className={styles.img}
-          />
-        </div>
-      </section>
+      {data?.map((item) => (
+        <section key={item.id} className={styles.item}>
+          <div className={styles.content}>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.desc}>{item.desc}</p>
+            <Button url="#">See More</Button>
+          </div>
+          <div className={styles.imgContainer}>
+            <Image fill={true} src={item.image} alt="" className={styles.img} />
+          </div>
+        </section>
+      ))}
     </div>
   );
 }
