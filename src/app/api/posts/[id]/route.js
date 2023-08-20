@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import connect from '@/utils/db';
-import post from '@/models/post';
+import Post from '@/models/Post';
 
 export async function GET(request, { params }) {
   const { id } = params;
@@ -8,7 +8,7 @@ export async function GET(request, { params }) {
   try {
     await connect();
 
-    const posts = await post.findById(id);
+    const posts = await Post.findById(id);
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {

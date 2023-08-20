@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import connect from '@/utils/db';
-import post from '@/models/post';
+import Post from '@/models/Post';
 
 export async function GET(request) {
   try {
     await connect();
 
-    const posts = await post.find();
+    const posts = await Post.find();
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (err) {
